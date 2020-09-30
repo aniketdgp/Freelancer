@@ -1,0 +1,179 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-default{
+    color: #FFF9C4;
+   
+    padding-top: 5px;  padding-bottom: 5px;
+    
+}
+
+.btn-mod{
+    background: #FFF176;
+}
+
+
+body{
+    padding-top:100px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+#content{
+    min-height: 600px;
+}
+
+#banner_image {
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/back.jpeg) no-repeat center center;
+    background-size: cover;
+}
+
+#banner_content {
+    position: relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    margin-top: 12%;
+    margin-bottom: 12%;
+    background-color: rgba(255,255,0,0.3);
+    max-width: 660px;
+}
+
+#item_list {
+    padding-top: 50px;
+}
+
+/*This code ensures that when we navigate to a particular section of a page, the section does not get lost behind the header*/
+#cameras:before, #watches:before, #shirts:before{
+    display: block; 
+    content: " "; 
+    margin-top: -85px; 
+    height: 85px; 
+    visibility: hidden;
+}
+
+
+#login-panel .panel-footer{
+    font-weight:normal;
+}
+
+.padding{
+    
+    padding-top: 50px;
+}
+
+footer {
+   
+    padding: 10px 0;
+    background-color: #FF5722;
+    color:#FFF9C4;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.red{
+    color:red;
+}
+
+#settings-container{
+    margin-bottom:10px;
+}
+
+.navbar-brand{
+    font-size:20px;
+}
+
+
+.remove_item_link{
+    color:#0000ff;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 200px) {
+     .signup {height: 200px;width: 350px;}
+  
+.responsivetext{
+    
+  font-size: 25px;
+  font-family:monospace;
+    
+}
+     
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+     .signup {height: 300px;width: 600px;}
+  
+.responsivetext{
+    
+  font-size: 25px;
+  font-family:monospace;
+    
+}
+     
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .signup {height: 400px;width: 800px;}
+    
+.responsivetext{
+    
+  font-size: 30px;
+  font-family:monospace;
+    
+}
+
+ #banner_content {
+        padding-bottom: 15%;
+    }
+    footer{
+        text-align:left;
+    }
+    
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .signup {height: 600px;width: 900px;}
+   
+.responsivetext{
+    
+  font-size: 35px;
+  font-family:monospace;
+    
+}
+   
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+     .signup {height: 400px;width: 650px;}
+    
+
+.responsivetext{
+    
+  font-size: 40px;
+  font-family:monospace;
+    
+}
+}

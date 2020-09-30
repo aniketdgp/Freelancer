@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cv">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FathersName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MothersName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Class10" Type="Int32" />
+    <Property Name="Stream" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Class12" Type="Int32" />
+    <Property Name="Achivements" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Interests" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="job">
+    <Key>
+      <PropertyRef Name="SL_NO" />
+    </Key>
+    <Property Name="SL_NO" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOB_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logindata">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="signup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="UsersEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cvs" EntityType="Self.cv" />
+    <EntitySet Name="jobs" EntityType="Self.job" />
+    <EntitySet Name="logindatas" EntityType="Self.logindata" />
+    <EntitySet Name="signups" EntityType="Self.signup" />
+  </EntityContainer>
+</Schema>

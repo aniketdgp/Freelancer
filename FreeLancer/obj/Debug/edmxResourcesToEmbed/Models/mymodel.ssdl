@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cv">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="FathersName" Type="varchar" MaxLength="30" />
+    <Property Name="MothersName" Type="varchar" MaxLength="30" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="Class10" Type="int" />
+    <Property Name="Stream" Type="varchar" MaxLength="10" />
+    <Property Name="Class12" Type="int" />
+    <Property Name="Achivements" Type="varchar" MaxLength="200" />
+    <Property Name="Skills" Type="varchar" MaxLength="100" />
+    <Property Name="Interests" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="job">
+    <Key>
+      <PropertyRef Name="SL_NO" />
+    </Key>
+    <Property Name="SL_NO" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="30" />
+    <Property Name="photo" Type="varchar" MaxLength="30" />
+    <Property Name="JOB_Description" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="logindata">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="signup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="30" />
+    <Property Name="Contact" Type="varchar" MaxLength="10" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Adress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="UsersModelStoreContainer">
+    <EntitySet Name="cv" EntityType="Self.cv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="job" EntityType="Self.job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logindata" EntityType="Self.logindata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="signup" EntityType="Self.signup" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

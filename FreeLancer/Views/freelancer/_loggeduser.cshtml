@@ -1,0 +1,143 @@
+﻿@model IEnumerable<FreeLancer.Models.job>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome | FreeLancer</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/js/jquery.js")"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+</head>
+
+<body style="padding-top: 50px;">
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- Header -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index", "freelancer")">FreeLancer </a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+
+
+
+
+                    <li>
+                        <a href="@Url.Action("Jobdata", "freelancer")">
+                            Check Jobs
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("cv", "freelancer")">
+                            Create CV
+                            <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("logout", "freelancer")">
+                            Logout
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--Header end-->
+    @if (Session["Email"] != null)
+    {
+        <p>Welcome @Session["Email"].ToString()</p>
+    }
+
+    <div class="container">
+        <div class="row top_margin">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">User Registration</div>
+                    <div class="panel-body">
+
+                        @foreach (var item in Model)
+                        {
+
+                        <div class="form-group">
+                            <label class="label-primary" for="email">Job Tittle</label>
+                            <label class="label-success" for="email"> @Html.DisplayFor(modelItem => item.title)</label>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label class="label-primary" for="first_name">First Name</label>
+                            <label class="label-success" for="first_name">@Html.DisplayFor(modelItem => item.JOB_Description)</label>
+                            
+                        </div>
+
+                        }
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="padding"></div>
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <center>
+                <p>Copyright &copy; Freelancer. All Rights Reserved  |  Contact Us: +91-9475912336</p>
+            </center>
+        </div>
+    </footer>
+    <!--Footer end-->
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿
+@model FreeLancer.Models.signup
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup | FreeLancer</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/js/jquery.js")"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+</head>
+
+<body>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index", "freelancer")">FreeLancer </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="@Url.Action("signup", "freelancer")">
+                            SignUp
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="@Url.Action("login", "freelancer")">
+                            Login
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="row">
+            <div class="container">
+
+                <div id='form'>
+
+                    <div class="col-lg-6 col-xs-12">
+
+                        <img class="signup" src="@Url.Content("~/Content/img/signup1.jpg")" alt="signup">
+
+                    </div>
+
+                    <div class="col-lg-6 col-xs-12">
+
+                        <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-2">
+                            <h2>SIGN UP</h2>
+
+
+
+                            @using (Html.BeginForm("signup1","FreeLancer"))
+                            {
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Name)
+                                    @Html.EditorFor(model => model.Name)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Email)
+                                    @Html.EditorFor(model => model.Email)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Password)
+                                    @Html.PasswordFor(model => model.Password)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Contact)
+                                    @Html.EditorFor(model => model.Contact)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.City)
+                                    @Html.EditorFor(model => model.City)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.Adress)
+                                    @Html.EditorFor(model => model.Adress)
+                                </div>
+
+
+                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                <p>
+                                    @ViewBag.m
+                                </p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="padding"></div>
+    <div class="padding"></div>
+
+
+    <footer>
+        <div class="container">
+            <center>
+                <p>Copyright &copy; FreeLancer. All Rights Reserved  |  Contact Us: +91 90000 00000</p>
+            </center>
+        </div>
+    </footer>
+</body>
+</html>

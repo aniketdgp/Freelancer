@@ -1,0 +1,144 @@
+﻿@model FreeLancer.Models.job
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | FreeLancer</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/js/jquery.js")"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+</head>
+
+
+
+<body>
+
+    <div>
+        @RenderBody()
+
+    </div>
+
+
+    <!-- Header -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index", "freelancer")">FreeLancer </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="@Url.Action("logout", "freelancer")">
+                           logout
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Header end-->
+
+
+    <div id="content">
+
+        @if (Session["Email"] != null)
+        {
+            <p>Welcome @Session["Email"].ToString()</p>
+        }
+
+
+            <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+                <h2>CV FORM</h2>
+                @using (Html.BeginForm())
+                {
+
+                <table>
+
+                    <tr>
+                        <td>
+                            @Html.Label("Enter job id")<br />
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.SL_NO)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            @Html.Label("Photo for Job Description")<br />
+                        </td>
+                        <td>
+                            <input type="file" name="ImageUpload" id="ImageUpload" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.Label("Preffered Tittle for job") <br />
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.title)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.Label("Enter The Job Description here")<br />
+                        </td>
+                        <td>
+                            @Html.TextAreaFor(model => model.JOB_Description)
+                        </td>
+                    </tr>
+
+
+
+                </table>
+
+
+                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+
+                    <br>
+
+
+                    <p>
+                        @ViewBag.m
+                    </p>
+
+                    <div class="padding">
+
+                    </div>
+
+
+                }
+
+            </div>
+
+
+
+
+
+
+            </div>
+
+            <footer>
+                <div class="container">
+                    <center>
+                        <p>Copyright &copy; FreeLancer. All Rights Reserved  |  Contact Us: +91-9475912336</p>
+                    </center>
+                </div>
+            </footer>
+</body>
+</html>

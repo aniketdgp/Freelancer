@@ -1,0 +1,112 @@
+﻿@model FreeLancer.Models.signup
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | FreeLancer</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/js/jquery.js")"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+</head>
+
+
+
+<body>
+
+    <div>
+        @RenderBody()
+
+    </div>
+
+
+    <!-- Header -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index", "freelancer")">FreeLancer </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="@Url.Action("signup", "freelancer")">
+                            SignUp
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="@Url.Action("login", "freelancer")">
+                            Login
+                            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--Header end-->
+
+
+
+
+
+
+    <div id="content">
+        <div class="container-fluid decor_bg" id="login-panel">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4>LOGIN</h4>
+                        </div>
+                        <tr class="panel-body">
+                            <p class="text-warning"><i>Login to Acess Your Content</i><p>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>
+
+            @Html.LabelFor(model => model.Email)
+                    </td>
+                <td> @Html.EditorFor(model => model.Email) </td>
+        </tr>
+        <tr>
+
+        <td>    @Html.LabelFor(model => model.Password)</td>
+          <td>  @Html.PasswordFor(model => model.Password)</td>
+        </tr>
+            </table>
+
+        <button type="submit" name="submit" class="btn btn-primary">Login</button><br><br>
+    }
+    <br />
+</div>
+                        <div class="panel-footer"><p>Don't have an account? <a href="@Url.Action("signup", "freelancer")">Register</a></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="container">
+            <center>
+                <p>Copyright &copy; FreeLancer. All Rights Reserved  |  Contact Us: +91-9475912336</p>
+            </center>
+        </div>
+    </footer>
+</body>
+</html>
